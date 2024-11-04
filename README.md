@@ -4,13 +4,13 @@ This website is built using [Docusaurus](https://docusaurus.io/), a modern stati
 
 ### Installation
 
-``` sh
+```sh
 yarn
 ```
 
 ### Local Development
 
-``` sh
+```sh
 yarn start
 ```
 
@@ -18,7 +18,7 @@ This command starts a local development server and opens up a browser window. Mo
 
 ### Build
 
-``` sh
+```sh
 yarn build
 ```
 
@@ -26,11 +26,11 @@ This command generates static content into the `build` directory and can be serv
 
 ### Fetch Updates for Changelogs
 
-``` sh
+```sh
 yarn clean-github-remote-content
 ```
 
-``` sh
+```sh
 yarn fetch-github-remote-content
 ```
 
@@ -40,16 +40,14 @@ These commands will clear out the old changelogs and fetch the latest available 
 
 Using SSH:
 
-``` sh
+```sh
 USE_SSH=true yarn deploy
 ```
 
 Not using SSH:
 
-``` sh
+```sh
 GIT_USER=<Your GitHub username> yarn deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
-# solspace-documentation
-# solspace-documentation

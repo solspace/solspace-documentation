@@ -32,7 +32,8 @@
     "react": "^18.0.0",
     "react-color": "^2.19.3",
     "react-dom": "^18.0.0",
-    "react-player": "^2.16.0"
+    "react-player": "^2.16.0",
+    "widest-line": "^5.0.0"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.6.0",

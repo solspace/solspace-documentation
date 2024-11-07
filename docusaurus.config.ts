@@ -94,6 +94,112 @@ const config: Config = {
         disableInDev: false,
       } satisfies IdealImageOptions,
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'craft-calendar',
+        path: 'craft-calendar',
+        routeBasePath: '/craft/calendar',
+        sidebarPath: './sidebars.ts',
+        lastVersion: 'current',
+        versions: {
+          current: {
+            label: '5.x',
+            path: 'v5',
+            badge: false,
+          },
+          v4: {
+            label: '4.x',
+            path: 'v4',
+            badge: false,
+          },
+          v3: {
+            label: '3.x',
+            path: 'v3',
+            badge: false,
+          },
+          v2: {
+            label: '2.x',
+            path: 'v2',
+            badge: false,
+          },
+          v1: {
+            label: '1.x',
+            path: 'v1',
+            badge: false,
+          },
+        },
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'ee-freeform',
+        path: 'ee-freeform',
+        routeBasePath: '/expressionengine/freeform',
+        sidebarPath: './sidebars.ts',
+        lastVersion: 'current',
+        versions: {
+          current: {
+            label: '3.x',
+            path: 'v3',
+            badge: false,
+          },
+          v2: {
+            label: '2.x',
+            path: 'v2',
+            badge: false,
+          },
+          v1: {
+            label: '1.x',
+            path: 'v1',
+            badge: false,
+          },
+          classic: {
+            label: 'Classic',
+            path: 'classic',
+            badge: false,
+          },
+        },
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'ee-calendar',
+        path: 'ee-calendar',
+        routeBasePath: '/expressionengine/calendar',
+        sidebarPath: './sidebars.ts',
+        lastVersion: 'current',
+        versions: {
+          current: {
+            label: '5.x',
+            path: 'v5',
+            badge: false,
+          },
+          v4: {
+            label: '4.x',
+            path: 'v4',
+            badge: false,
+          },
+          v3: {
+            label: '3.x',
+            path: 'v3',
+            badge: false,
+          },
+          v2: {
+            label: '2.x',
+            path: 'v2',
+            badge: false,
+          },
+          v1: {
+            label: '1.x',
+            path: 'v1',
+            badge: false,
+          },
+        },
+      },
+    ],
   ],
 
   themeConfig: {
@@ -122,21 +228,21 @@ const config: Config = {
           type: 'docsVersionDropdown',
           position: 'left',
         },
-        // {
-        //   type: 'docsVersionDropdown',
-        //   docsPluginId: 'craft-calendar',
-        //   position: 'left',
-        // },
-        // {
-        //   type: 'docsVersionDropdown',
-        //   docsPluginId: 'ee-freeform',
-        //   position: 'left',
-        // },
-        // {
-        //   type: 'docsVersionDropdown',
-        //   docsPluginId: 'ee-calendar',
-        //   position: 'left',
-        // },
+        {
+          type: 'docsVersionDropdown',
+          docsPluginId: 'craft-calendar',
+          position: 'left',
+        },
+        {
+          type: 'docsVersionDropdown',
+          docsPluginId: 'ee-freeform',
+          position: 'left',
+        },
+        {
+          type: 'docsVersionDropdown',
+          docsPluginId: 'ee-calendar',
+          position: 'left',
+        },
         {
           type: 'dropdown',
           position: 'right',

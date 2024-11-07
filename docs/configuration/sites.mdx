@@ -1,0 +1,92 @@
+---
+title: Site Filtering
+sidebar_position: 9
+---
+
+import { Photo, Badge } from '@site/src/components/utils';
+
+import BuilderSettingPhoto from './assets/img/builder-setting.png';
+import Forms1Photo from './assets/img/forms-1.png';
+import Forms2Photo from './assets/img/forms-2.png';
+import Forms3Photo from './assets/img/forms-3.png';
+import SettingPhoto from './assets/img/setting.png';
+import SubmissionsPhoto from './assets/img/submissions.png';
+import SwitcherPhoto from './assets/img/switcher.png';
+
+# Site Filtering for Forms and Submissions<Badge type="pro" text="Pro" /><Badge type="feature" text="New in 5.2+" />
+
+Optionally enable Site filtering for forms and submissions to show/hide them for specific Sites.
+
+## Overview
+
+This feature allows you to filter form lists by [Sites](https://craftcms.com/docs/5.x/system/sites.html) and prevents other admins from accessing forms that belong to Sites they don't have access to. By default, any new forms created will be visible for the Site they were created on (with the ability to enable additional sites).
+
+This can help clean up the Freeform control panel when you have many forms specific to certain Sites.
+
+:::warning
+This only controls access to forms and submissions. It does not enable translations per site.
+:::
+
+### Setting
+
+Inside the **General Settings** page, you can enable this feature by toggling ON the **Site Filtering for Forms and Submissions** setting (or `sitesEnabled: true` in Project Config).
+
+<Photo img={SettingPhoto} alt="General Settings" />
+
+### Form Builder
+
+Once enabled, an additional **Sites** setting will appear for forms inside the _Settings_ tab of the form builder.
+
+<Photo img={BuilderSettingPhoto} alt="Form Builder" />
+
+### Site Switcher
+
+The **Site** switcher will be present in several areas of the Freeform control panel.
+
+<Photo img={SwitcherPhoto} alt="Site Switcher" />
+
+### Forms
+
+Forms can be filtered by Site(s) they are assigned to. If a user only has access to one or some of the Sites, the Site switcher will automatically limit what is visible to them.
+
+<Photo img={Forms1Photo} alt="Forms - Site 1" />
+<Photo img={Forms2Photo} alt="Forms - Site 2" />
+<Photo img={Forms3Photo} alt="Forms - Site 3" />
+
+### Submissions
+
+The Submissions index will filter its form source filters by forms that are available for the active Site, and the **All Submissions** source filter will only display submissions for forms that are available for the active Site.
+
+<Photo img={SubmissionsPhoto} alt="Submissions" />
+
+### Export Profiles
+
+Export profiles will become filtered by forms that are assigned to the active Site.
+
+### Templates
+
+It's important to note that if a form is only enabled for _Site A_ and _Site B_, it will show when viewing _Site C_ in the front end.
+
+## Retroactively Apply to Existing Installs
+
+If you wish to enable this feature retroactively to an existing Craft install, please follow the steps below:
+
+1. Enable the **Site Filtering for Forms and Submissions** setting in Freeform.
+2. Open up each form and update the **Sites** setting inside the _Settings_ tab and save the form.
+   - Repeat for every form on your site.
+   - By default, every form will have NO Sites checked off, but Freeform assumes the form should be active for ALL Sites if that is the case.
+3. Run the following CLI command (otherwise only your primary site will be able to see submissions in the control panel):
+   ```command-line showLineNumbers
+   php craft freeform/submissions/resave
+   ```
+
+## What It Doesn't Do
+
+While this feature relies on the Craft [Sites](https://craftcms.com/docs/5.x/system/sites.html) feature to work, the primary intention at this point is to allow filtering of forms and submissions per Site.
+
+Here are some things it cannot do (yet?):
+
+- CP-based translations of Freeform forms. The only option for translating forms per site remains via [Static Text Translations](../configuration/translating.mdx).
+- Translations of Freeform submissions per site.
+- Unique settings per site.
+- Unique integrations per site.

@@ -38,11 +38,42 @@ const config: Config = {
       'classic',
       {
         docs: {
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: '5.x',
+              path: 'v5',
+              badge: false,
+            },
+            v4: {
+              label: '4.x',
+              path: 'v4',
+              badge: false,
+            },
+            v3: {
+              label: '3.x',
+              path: 'v3',
+              badge: false,
+            },
+            v2: {
+              label: '2.x',
+              path: 'v2',
+              badge: false,
+            },
+            v1: {
+              label: '1.x',
+              path: 'v1',
+              badge: false,
+            },
+          },
+          routeBasePath: '/craft/freeform',
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
+          admonitions: {
+            keywords: ['youtube', 'guide'],
+            extendDefaults: true,
+          },
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/solspace/solspace-documentation/edit/main',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -50,6 +81,7 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
+
   plugins: [
     tailwind,
     [

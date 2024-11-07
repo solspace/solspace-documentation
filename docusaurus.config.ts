@@ -2,6 +2,7 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 import tailwind from './plugins/tailwind-config.cjs';
+import docusaurusGithubRemoteContent from './plugins/docusaurus-github-remote-content';
 
 import type { Options as IdealImageOptions } from '@docusaurus/plugin-ideal-image';
 
@@ -24,11 +25,6 @@ const config: Config = {
 
   markdown: {
     mermaid: true,
-  },
-
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
   },
 
   themes: ['@docusaurus/theme-mermaid'],
@@ -67,13 +63,13 @@ const config: Config = {
             },
           },
           routeBasePath: '/craft/freeform',
+          path: './craft-freeform',
           sidebarPath: './sidebars.ts',
           admonitions: {
             keywords: ['youtube', 'guide'],
             extendDefaults: true,
           },
-          editUrl:
-            'https://github.com/solspace/solspace-documentation/edit/main',
+          editUrl: 'https://github.com/solspace/craft-freeform-docs/edit/main',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -83,6 +79,90 @@ const config: Config = {
   ],
 
   plugins: [
+    [
+      docusaurusGithubRemoteContent,
+      {
+        contents: [
+          {
+            version: 5,
+            saveDir: 'craft-freeform/setup',
+            file: 'changelog.mdx',
+            url: 'https://raw.githubusercontent.com/solspace/craft-freeform/v5/CHANGELOG.md',
+            meta: {
+              title: 'Changelog',
+              sidebar_label: 'Changelog',
+              sidebar_position: 5,
+            },
+          },
+          {
+            version: 4,
+            saveDir: 'versioned_docs/version-v4/setup',
+            file: 'changelog.mdx',
+            url: 'https://raw.githubusercontent.com/solspace/craft-freeform/v4/CHANGELOG.md',
+            meta: {
+              title: 'Changelog',
+              sidebar_label: 'Changelog',
+              sidebar_position: 5,
+            },
+          },
+          {
+            version: 3,
+            saveDir: 'versioned_docs/version-v3/setup',
+            file: 'changelog.mdx',
+            url: 'https://raw.githubusercontent.com/solspace/craft-freeform/v3/CHANGELOG.md',
+            meta: {
+              title: 'Changelog',
+              sidebar_label: 'Changelog',
+              sidebar_position: 5,
+            },
+          },
+          {
+            version: 2,
+            saveDir: 'versioned_docs/version-v2/setup',
+            file: 'changelog.mdx',
+            url: 'https://raw.githubusercontent.com/solspace/craft-freeform/v2/CHANGELOG.md',
+            meta: {
+              title: 'Changelog',
+              sidebar_label: 'Changelog',
+              sidebar_position: 5,
+            },
+          },
+          {
+            version: 5,
+            saveDir: 'craft-calendar/setup',
+            file: 'changelog.mdx',
+            url: 'https://raw.githubusercontent.com/solspace/craft-calendar/v5/CHANGELOG.md',
+            meta: {
+              title: 'Changelog',
+              sidebar_label: 'Changelog',
+              sidebar_position: 2,
+            },
+          },
+          {
+            version: 4,
+            saveDir: 'craft-calendar_versioned_docs/version-v4/setup',
+            file: 'changelog.mdx',
+            url: 'https://raw.githubusercontent.com/solspace/craft-calendar/v4/CHANGELOG.md',
+            meta: {
+              title: 'Changelog',
+              sidebar_label: 'Changelog',
+              sidebar_position: 2,
+            },
+          },
+          {
+            version: 3,
+            saveDir: 'craft-calendar_versioned_docs/version-v3/setup',
+            file: 'changelog.mdx',
+            url: 'https://raw.githubusercontent.com/solspace/craft-calendar/v3/CHANGELOG.md',
+            meta: {
+              title: 'Changelog',
+              sidebar_label: 'Changelog',
+              sidebar_position: 3,
+            },
+          },
+        ],
+      },
+    ],
     tailwind,
     [
       '@docusaurus/plugin-ideal-image',
@@ -304,7 +384,6 @@ const config: Config = {
         },
       ],
     },
-
     prism: {
       theme: PrismLight,
       darkTheme: PrismDark,
@@ -318,6 +397,9 @@ const config: Config = {
         'nix',
         'twig',
       ],
+    },
+    future: {
+      experimental_faster: true,
     },
   } satisfies Preset.ThemeConfig,
 };

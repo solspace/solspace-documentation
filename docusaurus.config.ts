@@ -17,6 +17,8 @@ const config: Config = {
   url: 'https://codepacks.com/',
   baseUrl: '/',
 
+  staticDirectories: ['static'],
+
   organizationName: 'solspace',
   projectName: 'solspace-documentation',
 
@@ -397,9 +399,6 @@ const config: Config = {
         'nix',
         'twig',
       ],
-    },
-    future: {
-      experimental_faster: true,
     },
   } satisfies Preset.ThemeConfig,
 };
